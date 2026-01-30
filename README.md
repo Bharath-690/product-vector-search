@@ -91,18 +91,27 @@ This approach allows handling of near duplicates, spelling errors, and similar p
 ### ☁️ AWS Lambda Notes
 
 *lambda_handler.py mimics an AWS Lambda function handler
+
 *Accepts a query string and generates embeddings using the same TF-IDF logic
+
 *Queries MySQL and returns the most similar products
+
 *AWS account is not required for local testing
+
 *Can be deployed to AWS Lambda with proper configuration
+
 *Terraform scripts are optional and can be added separately
 
 ### 📝 Assumptions and Limitations
 
 *TF-IDF embeddings do not capture deep semantic meaning like transformer models
+
 *MySQL stores vectors as JSON strings (not ideal for very large datasets)
+
 *Duplicate product names exist by design and are handled via deduplication logic
+
 *No real-time indexing or incremental updates
+
 *Typo tolerance is limited by token matching in TF-IDF
 
 ### 📂 Repository Structure
