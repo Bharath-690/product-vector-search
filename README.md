@@ -27,19 +27,3 @@ This project implements a semantic product search system using vector embeddings
   ]
 }
 
-## 💻 Tech Stack
-
-- Python 3.x  
-- TF-IDF vectorization (scikit-learn)  
-- MySQL (for storing products and vectors)  
-- Cosine similarity (for vector search)  
-
----
-
-## 🚀 How to Run Locally
-
-1. **Clone the repository:**
-
-```bash
-git clone https://github.com/Bharath-690/product-vector-search.git
-cd product-vector-search
