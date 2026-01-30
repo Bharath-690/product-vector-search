@@ -1,8 +1,8 @@
-### 🔍 Vector Search Demo
+## 🔍 Vector Search Demo
 
 This project implements a semantic product search system using vector embeddings and cosine similarity.
 
-### Features
+## Features
 - Finds semantically similar products, not just exact text matches
 - Handles closely related product names (e.g., *Apple iPhone 14 Pro* vs *Apple iPhone 14*)
 - Supports typo tolerance (e.g., *Samzung Galaxy S21*)
@@ -37,19 +37,19 @@ This project implements a semantic product search system using vector embeddings
 
 ## 🚀 How to Run Locally
 
-# 1.Clone the repository:
+### 1.Clone the repository:
 ```json
 
 git clone https://github.com/Bharath-690/product-vector-search.git
 cd product-vector-search
 ```
-# 2.Set up Python environment:
+### 2.Set up Python environment:
 ```json
 
 pip install -r requirements.txt
 ```
 
-# 3.Create MySQL database and table:
+### 3.Create MySQL database and table:
 ```json
 
 CREATE DATABASE product_vector_db;
@@ -57,28 +57,28 @@ USE product_vector_db;
 SOURCE sql/create_table.sql;
 ```
 
-# 4.Generate product data with edge cases:
+### 4.Generate product data with edge cases:
 ```json
 
 python scripts/generate_products.py
 ```
 This generates data/products.csv with 500 products.
 
-# 5.Generate TF-IDF embeddings and store in MySQL:
+### 5.Generate TF-IDF embeddings and store in MySQL:
 ```json
 
 python scripts/embed_products.py
 ```
 (Make sure to update your MySQL credentials in embed_products.py)
 
-# 6.Run the similarity search (simulate AWS Lambda):
+### 6.Run the similarity search (simulate AWS Lambda):
 ```json
 
 python scripts/lambda_handler.py
 ```
 Example query is hardcoded in the script, or you can modify the test_event dictionary.
 
-### 🧠 Vector Similarity Logic Explained
+## 🧠 Vector Similarity Logic Explained
 
 Product names are converted into numerical vectors using TF-IDF, which reflects the importance of each word relative to all product names.
 
@@ -88,7 +88,7 @@ The system ranks all products based on similarity scores and returns the top 5 u
 
 This approach allows handling of near duplicates, spelling errors, and similar phrases effectively without needing heavy machine learning models.
 
-### ☁️ AWS Lambda Notes
+## ☁️ AWS Lambda Notes
 
 *lambda_handler.py mimics an AWS Lambda function handler
 
@@ -102,7 +102,7 @@ This approach allows handling of near duplicates, spelling errors, and similar p
 
 *Terraform scripts are optional and can be added separately
 
-### 📝 Assumptions and Limitations
+## 📝 Assumptions and Limitations
 
 *TF-IDF embeddings do not capture deep semantic meaning like transformer models
 
@@ -114,7 +114,7 @@ This approach allows handling of near duplicates, spelling errors, and similar p
 
 *Typo tolerance is limited by token matching in TF-IDF
 
-### 📂 Repository Structure
+## 📂 Repository Structure
 ```json
 product-vector-search/
 ├── data/                  # Generated CSV product data
@@ -125,7 +125,7 @@ product-vector-search/
 └── .gitignore             # Git ignore rules
 ```
 
-### 📧 Contact
+## 📧 Contact
 
 Created by Nesai Bharath
 Feel free to reach out on
